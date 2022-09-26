@@ -67,4 +67,4 @@ class Conn_DB:
 #teste
 # print(Conn_DB.test_conn())
 # print(Conn_DB.create_table_product())
-print(Conn_DB.insert_product('Cotonete', 30.0, 'Hiegiene'))
+# print(Conn_DB.insert_product('Cotonete', 30.0, 'Hiegiene'))

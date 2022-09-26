@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+      <div class="span">
+        <div class="card text-bg-light d-flex align-content-center" style="max-width: 50rem;">
+            <div class="card-header">Create Product</div>
+            <div class="card-body">
+              <form action="/createproduct" method="POST">
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">product_name</span>
+                      <input id="product_name" name = "product_name"type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">product_price</span>
+                      <input id="product_price" name = "product_price" type="money" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">product_category</span>
+                      <input id="product_category" name = "product_category" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <!-- <div class="input-group mb-3">
+                      <span class="input-group-text">Celular</span>
+                      <input id="celular" name = "celular" type="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">telefone</span>
+                      <input id="telefone" name = "telefone" type="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">Sexo</span>
+                      <input id="sexo" name = "sexo" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">CPF</span>
+                      <input id="cpf" name = "cpf" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text">Senha</span>
+                      <input id="senha" name = "senha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div> -->
+                  <button  type="submit" class="btn btn-primary botaologin">Create</button>
+              </form>
+        </div>
+
+    </div>
+
+{% endblock content %}
