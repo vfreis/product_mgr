@@ -17,7 +17,7 @@ app.config['MYSQL_DATABASE_PASSWORD'] = env_var_mysql['password']
 app.config['MYSQL_DATABASE_DB'] = env_var_mysql['database']
 mysql.init_app(app)
 
-class Conexao_DB:
+class Conn_DB:
 
     #testa db
     def test_conn():
@@ -42,6 +42,29 @@ class Conexao_DB:
         resposta = cursor.execute(validar)
         return  resposta
 
+    def make_select(query):
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute(query)
+        results = []
+        columns = [column[0] for column in cursor.description]
+        for line in cursor.fetchall():
+            results.append(dict(zip(columns, line)))
+        return results
 
-print(Conexao_DB.test_conn())
-print(Conexao_DB.create_table_product())
+    def select_product_name(name):
+        select = f'''SELECT * FROM product WHERE name = '{name}'; '''
+        return Conn_DB.make_select(select)
+
+    def insert_product(name, price, category):
+        insert = f'''INSERT INTO product (name, price, category) values ('{name}', {price}, '{category}');'''
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute(insert)
+        conn.commit()
+        return Conn_DB.select_product_name(name)
+
+#teste
+# print(Conn_DB.test_conn())
+# print(Conn_DB.create_table_product())
+print(Conn_DB.insert_product('Cotonete', 30.0, 'Hiegiene'))
