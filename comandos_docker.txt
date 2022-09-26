@@ -1,0 +1,38 @@
+deploy de app flask em docker: Atividade 1 em ordem
+
+git clone
+docker pull mysql:5.7
+docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=mudar123 -p 3307:3307 -d mysql:5.7
+docker ps [para ver se o docker está on]
+docker exec -it 9052f2e396e1 /bin/bash [acessa o sql]
+mysql -uroot -p [usuario e senha do sql]
+mysql create schema; [cria db e tabelas]
+use tbl_user;
+exit para sair e voltar para a raiz
+pip install na pasta do projeto
+python 3 'nome do arqv'
+
+utilizar docker network inspect bridge para confirmar ip
+
+
+criar img : atividade 2 em ordem
+
+git clone
+docker image build -t python-web .
+docker run -p 5050:5050 -d python-web
+/\ é diferente
+\/ é igual
+docker pull mysql:5.7
+docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=mudar123 -p 3307:3307 -d mysql:5.7
+docker ps [para ver se o docker está on]
+docker exec -it 9052f2e396e1 /bin/bash [acessa o sql]
+mysql -uroot -p [usuario e senha do sql]
+mysql create schema; [cria db e tabelas]
+use tbl_user;
+criar as tabelas
+exit para sair e voltar para a raiz
+pip install na pasta do projeto
+python 3 'nome do arqv'
+
+utilizar docker network inspect bridge para confirmar ip
+
